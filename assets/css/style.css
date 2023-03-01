@@ -520,7 +520,7 @@ section {
 # main Us
 --------------------------------------------------------------*/
 .main{
-  background-image: url("/assets/img/mainBG.png");
+  background-image: url(/mainBG.png);
   background-size:cover;
 }
 .main .content h3 {
