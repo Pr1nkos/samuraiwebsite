@@ -251,7 +251,11 @@
 .plyr__control.plyr__tab-focus {
   outline: 3px dotted #00b3ff;
   outline: #00b3ff dotted 3px;
-  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, var(--plyr-color-main, #00b3ff))) dotted 3px;
+  outline: var(
+      --plyr-tab-focus-color,
+      var(--plyr-color-main, var(--plyr-color-main, #00b3ff))
+    )
+    dotted 3px;
   outline-offset: 2px;
 }
 
@@ -321,18 +325,18 @@ a.plyr__control:before {
   padding-left: 0;
 }
 
-.plyr [data-plyr='airplay'],
-.plyr [data-plyr='captions'],
-.plyr [data-plyr='fullscreen'],
-.plyr [data-plyr='pip'],
+.plyr [data-plyr="airplay"],
+.plyr [data-plyr="captions"],
+.plyr [data-plyr="fullscreen"],
+.plyr [data-plyr="pip"],
 .plyr__controls:empty {
   display: none;
 }
 
-.plyr--airplay-supported [data-plyr='airplay'],
-.plyr--captions-enabled [data-plyr='captions'],
-.plyr--fullscreen-enabled [data-plyr='fullscreen'],
-.plyr--pip-supported [data-plyr='pip'] {
+.plyr--airplay-supported [data-plyr="airplay"],
+.plyr--captions-enabled [data-plyr="captions"],
+.plyr--fullscreen-enabled [data-plyr="fullscreen"],
+.plyr--pip-supported [data-plyr="pip"] {
   display: inline-block;
 }
 
@@ -350,12 +354,12 @@ a.plyr__control:before {
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
-.plyr__menu .plyr__control[aria-expanded='true'] svg {
+.plyr__menu .plyr__control[aria-expanded="true"] svg {
   -webkit-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
-.plyr__menu .plyr__control[aria-expanded='true'] .plyr__tooltip {
+.plyr__menu .plyr__control[aria-expanded="true"] .plyr__tooltip {
   display: none;
 }
 
@@ -388,8 +392,10 @@ a.plyr__control:before {
 
 .plyr__menu__container > div {
   overflow: hidden;
-  -webkit-transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1), width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .plyr__menu__container:after {
@@ -399,29 +405,32 @@ a.plyr__control:before {
   border: var(--plyr-menu-arrow-size, 4px) solid transparent;
   border-top-color: hsla(0, 0%, 100%, 0.9);
   border-top-color: var(--plyr-menu-background, hsla(0, 0%, 100%, 0.9));
-  content: '';
+  content: "";
   height: 0;
   position: absolute;
   right: 14px;
   right: calc(18px / 2 + 10px * 0.7 - 4px / 2);
-  right: calc(var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) * 0.7 - var(--plyr-menu-arrow-size, 4px) / 2);
+  right: calc(
+    var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) *
+      0.7 - var(--plyr-menu-arrow-size, 4px) / 2
+  );
   top: 100%;
   width: 0;
 }
 
-.plyr__menu__container [role='menu'] {
+.plyr__menu__container [role="menu"] {
   padding: 7px;
   padding: calc(10px * 0.7);
   padding: calc(var(--plyr-control-spacing, 10px) * 0.7);
 }
 
-.plyr__menu__container [role='menuitem'],
-.plyr__menu__container [role='menuitemradio'] {
+.plyr__menu__container [role="menuitem"],
+.plyr__menu__container [role="menuitemradio"] {
   margin-top: 2px;
 }
 
-.plyr__menu__container [role='menuitem']:first-child,
-.plyr__menu__container [role='menuitemradio']:first-child {
+.plyr__menu__container [role="menuitem"]:first-child,
+.plyr__menu__container [role="menuitemradio"]:first-child {
   margin-top: 0;
 }
 
@@ -439,8 +448,9 @@ a.plyr__control:before {
   font-size: 13px;
   font-size: var(--plyr-font-size-menu, var(--plyr-font-size-small, 13px));
   padding: 4.66667px 10.5px;
-  padding: calc(10px * 0.7/1.5) calc(10px * 0.7 * 1.5);
-  padding: calc(var(--plyr-control-spacing, 10px) * 0.7/1.5) calc(var(--plyr-control-spacing, 10px) * 0.7 * 1.5);
+  padding: calc(10px * 0.7 / 1.5) calc(10px * 0.7 * 1.5);
+  padding: calc(var(--plyr-control-spacing, 10px) * 0.7 / 1.5)
+    calc(var(--plyr-control-spacing, 10px) * 0.7 * 1.5);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -462,7 +472,7 @@ a.plyr__control:before {
   border: 4px solid transparent;
   border: 4px solid transparent;
   border: var(--plyr-menu-item-arrow-size, 4px) solid transparent;
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -481,7 +491,10 @@ a.plyr__control:before {
   border-left-color: var(--plyr-menu-arrow-color, #728197);
   right: 6.5px;
   right: calc(10px * 0.7 * 1.5 - 4px);
-  right: calc(var(--plyr-control-spacing, 10px) * 0.7 * 1.5 - var(--plyr-menu-item-arrow-size, 4px));
+  right: calc(
+    var(--plyr-control-spacing, 10px) * 0.7 * 1.5 -
+      var(--plyr-menu-item-arrow-size, 4px)
+  );
 }
 
 .plyr__menu__container .plyr__control--forward.plyr__tab-focus:after,
@@ -497,8 +510,8 @@ a.plyr__control:before {
   margin: calc(10px * 0.7);
   margin: calc(var(--plyr-control-spacing, 10px) * 0.7);
   margin-bottom: 3.5px;
-  margin-bottom: calc(10px * 0.7/2);
-  margin-bottom: calc(var(--plyr-control-spacing, 10px) * 0.7/2);
+  margin-bottom: calc(10px * 0.7 / 2);
+  margin-bottom: calc(var(--plyr-control-spacing, 10px) * 0.7 / 2);
   padding-left: 28px;
   padding-left: calc(10px * 0.7 * 4);
   padding-left: calc(var(--plyr-control-spacing, 10px) * 0.7 * 4);
@@ -514,7 +527,10 @@ a.plyr__control:before {
   border-right-color: var(--plyr-menu-arrow-color, #728197);
   left: 6.5px;
   left: calc(10px * 0.7 * 1.5 - 4px);
-  left: calc(var(--plyr-control-spacing, 10px) * 0.7 * 1.5 - var(--plyr-menu-item-arrow-size, 4px));
+  left: calc(
+    var(--plyr-control-spacing, 10px) * 0.7 * 1.5 -
+      var(--plyr-menu-item-arrow-size, 4px)
+  );
 }
 
 .plyr__menu__container .plyr__control--back:before {
@@ -526,12 +542,12 @@ a.plyr__control:before {
   box-shadow: 0 1px 0 #fff;
   -webkit-box-shadow: 0 1px 0 var(--plyr-menu-back-border-shadow-color, #fff);
   box-shadow: 0 1px 0 var(--plyr-menu-back-border-shadow-color, #fff);
-  content: '';
+  content: "";
   height: 1px;
   left: 0;
   margin-top: 3.5px;
-  margin-top: calc(10px * 0.7/2);
-  margin-top: calc(var(--plyr-control-spacing, 10px) * 0.7/2);
+  margin-top: calc(10px * 0.7 / 2);
+  margin-top: calc(var(--plyr-control-spacing, 10px) * 0.7 / 2);
   overflow: hidden;
   position: absolute;
   right: 0;
@@ -543,20 +559,20 @@ a.plyr__control:before {
   border-right-color: currentColor;
 }
 
-.plyr__menu__container .plyr__control[role='menuitemradio'] {
+.plyr__menu__container .plyr__control[role="menuitemradio"] {
   padding-left: 7px;
   padding-left: calc(10px * 0.7);
   padding-left: calc(var(--plyr-control-spacing, 10px) * 0.7);
 }
 
-.plyr__menu__container .plyr__control[role='menuitemradio']:after,
-.plyr__menu__container .plyr__control[role='menuitemradio']:before {
+.plyr__menu__container .plyr__control[role="menuitemradio"]:after,
+.plyr__menu__container .plyr__control[role="menuitemradio"]:before {
   border-radius: 100%;
 }
 
-.plyr__menu__container .plyr__control[role='menuitemradio']:before {
+.plyr__menu__container .plyr__control[role="menuitemradio"]:before {
   background: rgba(0, 0, 0, 0.1);
-  content: '';
+  content: "";
   display: block;
   -ms-flex-negative: 0;
   flex-shrink: 0;
@@ -569,7 +585,7 @@ a.plyr__control:before {
   width: 16px;
 }
 
-.plyr__menu__container .plyr__control[role='menuitemradio']:after {
+.plyr__menu__container .plyr__control[role="menuitemradio"]:after {
   background: #fff;
   border: 0;
   height: 6px;
@@ -581,24 +597,31 @@ a.plyr__control:before {
   -webkit-transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
   transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease,
+    -webkit-transform 0.3s ease;
   width: 6px;
 }
 
-.plyr__menu__container .plyr__control[role='menuitemradio'][aria-checked='true']:before {
+.plyr__menu__container
+  .plyr__control[role="menuitemradio"][aria-checked="true"]:before {
   background: #00b3ff;
   background: #00b3ff;
-  background: var(--plyr-control-toggle-checked-background, var(--plyr-color-main, var(--plyr-color-main, #00b3ff)));
+  background: var(
+    --plyr-control-toggle-checked-background,
+    var(--plyr-color-main, var(--plyr-color-main, #00b3ff))
+  );
 }
 
-.plyr__menu__container .plyr__control[role='menuitemradio'][aria-checked='true']:after {
+.plyr__menu__container
+  .plyr__control[role="menuitemradio"][aria-checked="true"]:after {
   opacity: 1;
   -webkit-transform: translateY(-50%) scale(1);
   transform: translateY(-50%) scale(1);
 }
 
-.plyr__menu__container .plyr__control[role='menuitemradio'].plyr__tab-focus:before,
-.plyr__menu__container .plyr__control[role='menuitemradio']:hover:before {
+.plyr__menu__container
+  .plyr__control[role="menuitemradio"].plyr__tab-focus:before,
+.plyr__menu__container .plyr__control[role="menuitemradio"]:hover:before {
   background: rgba(35, 40, 47, 0.1);
 }
 
@@ -620,7 +643,7 @@ a.plyr__control:before {
   pointer-events: none;
 }
 
-.plyr--full-ui input[type='range'] {
+.plyr--full-ui input[type="range"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -631,11 +654,17 @@ a.plyr__control:before {
   border-radius: calc(var(--plyr-range-thumb-height, 13px) * 2);
   color: #00b3ff;
   color: #00b3ff;
-  color: var(--plyr-range-fill-background, var(--plyr-color-main, var(--plyr-color-main, #00b3ff)));
+  color: var(
+    --plyr-range-fill-background,
+    var(--plyr-color-main, var(--plyr-color-main, #00b3ff))
+  );
   display: block;
   height: 19px;
   height: calc(3px * 2 + 13px);
-  height: calc(var(--plyr-range-thumb-active-shadow-width, 3px) * 2 + var(--plyr-range-thumb-height, 13px));
+  height: calc(
+    var(--plyr-range-thumb-active-shadow-width, 3px) * 2 +
+      var(--plyr-range-thumb-height, 13px)
+  );
   margin: 0;
   min-width: 0;
   padding: 0;
@@ -646,13 +675,29 @@ a.plyr__control:before {
   width: 100%;
 }
 
-.plyr--full-ui input[type='range']::-webkit-slider-runnable-track {
+.plyr--full-ui input[type="range"]::-webkit-slider-runnable-track {
   background: 0 0;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(0, currentColor), color-stop(0, transparent));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    color-stop(0, currentColor),
+    color-stop(0, transparent)
+  );
   background-image: linear-gradient(90deg, currentColor 0, transparent 0);
   background-image: linear-gradient(to right, currentColor 0, transparent 0);
-  background-image: -webkit-gradient(linear, left top, right top, from(currentColor), to(transparent));
-  background-image: linear-gradient(to right, currentColor var(--value, 0), transparent var(--value, 0));
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(currentColor),
+    to(transparent)
+  );
+  background-image: linear-gradient(
+    to right,
+    currentColor var(--value, 0),
+    transparent var(--value, 0)
+  );
   border: 0;
   border-radius: 2.5px;
   border-radius: calc(5px / 2);
@@ -669,7 +714,7 @@ a.plyr__control:before {
   user-select: none;
 }
 
-.plyr--full-ui input[type='range']::-webkit-slider-thumb {
+.plyr--full-ui input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   background: #fff;
@@ -677,18 +722,31 @@ a.plyr__control:before {
   background: var(--plyr-range-thumb-background, #fff);
   border: 0;
   border-radius: 100%;
-  -webkit-box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2);
+  -webkit-box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15)
+    rgba(35, 40, 47, 0.2);
   box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2);
-  -webkit-box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2);
+  -webkit-box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15),
+    0 0 0 1px rgba(35, 40, 47, 0.2);
   box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2);
-  -webkit-box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2));
-  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2));
+  -webkit-box-shadow: var(
+    --plyr-range-thumb-shadow,
+    0 1px 1px rgba(35, 40, 47, 0.15),
+    0 0 0 1px rgba(35, 40, 47, 0.2)
+  );
+  box-shadow: var(
+    --plyr-range-thumb-shadow,
+    0 1px 1px rgba(35, 40, 47, 0.15),
+    0 0 0 1px rgba(35, 40, 47, 0.2)
+  );
   height: 13px;
   height: 13px;
   height: var(--plyr-range-thumb-height, 13px);
   margin-top: -4px;
   margin-top: calc(13px / 2 * -1 - 5px / 2 * -1);
-  margin-top: calc(var(--plyr-range-thumb-height, 13px) / 2 * -1 - var(--plyr-range-track-height, 5px) / 2 * -1);
+  margin-top: calc(
+    var(--plyr-range-thumb-height, 13px) / 2 * -1 -
+      var(--plyr-range-track-height, 5px) / 2 * -1
+  );
   position: relative;
   -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
@@ -697,7 +755,7 @@ a.plyr__control:before {
   width: var(--plyr-range-thumb-height, 13px);
 }
 
-.plyr--full-ui input[type='range']::-moz-range-track {
+.plyr--full-ui input[type="range"]::-moz-range-track {
   background: 0 0;
   border: 0;
   border-radius: 2.5px;
@@ -712,7 +770,7 @@ a.plyr__control:before {
   user-select: none;
 }
 
-.plyr--full-ui input[type='range']::-moz-range-thumb {
+.plyr--full-ui input[type="range"]::-moz-range-thumb {
   background: #fff;
   background: #fff;
   background: var(--plyr-range-thumb-background, #fff);
@@ -720,7 +778,11 @@ a.plyr__control:before {
   border-radius: 100%;
   box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2);
   box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2);
-  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2));
+  box-shadow: var(
+    --plyr-range-thumb-shadow,
+    0 1px 1px rgba(35, 40, 47, 0.15),
+    0 0 0 1px rgba(35, 40, 47, 0.2)
+  );
   height: 13px;
   height: 13px;
   height: var(--plyr-range-thumb-height, 13px);
@@ -732,7 +794,7 @@ a.plyr__control:before {
   width: var(--plyr-range-thumb-height, 13px);
 }
 
-.plyr--full-ui input[type='range']::-moz-range-progress {
+.plyr--full-ui input[type="range"]::-moz-range-progress {
   background: currentColor;
   border-radius: 2.5px;
   border-radius: calc(5px / 2);
@@ -742,12 +804,12 @@ a.plyr__control:before {
   height: var(--plyr-range-track-height, 5px);
 }
 
-.plyr--full-ui input[type='range']::-ms-track {
+.plyr--full-ui input[type="range"]::-ms-track {
   color: transparent;
 }
 
-.plyr--full-ui input[type='range']::-ms-fill-upper,
-.plyr--full-ui input[type='range']::-ms-track {
+.plyr--full-ui input[type="range"]::-ms-fill-upper,
+.plyr--full-ui input[type="range"]::-ms-track {
   background: 0 0;
   border: 0;
   border-radius: 2.5px;
@@ -762,7 +824,7 @@ a.plyr__control:before {
   user-select: none;
 }
 
-.plyr--full-ui input[type='range']::-ms-fill-lower {
+.plyr--full-ui input[type="range"]::-ms-fill-lower {
   background: 0 0;
   background: currentColor;
   border: 0;
@@ -778,7 +840,7 @@ a.plyr__control:before {
   user-select: none;
 }
 
-.plyr--full-ui input[type='range']::-ms-thumb {
+.plyr--full-ui input[type="range"]::-ms-thumb {
   background: #fff;
   background: #fff;
   background: var(--plyr-range-thumb-background, #fff);
@@ -786,7 +848,11 @@ a.plyr__control:before {
   border-radius: 100%;
   box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2);
   box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2);
-  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2));
+  box-shadow: var(
+    --plyr-range-thumb-shadow,
+    0 1px 1px rgba(35, 40, 47, 0.15),
+    0 0 0 1px rgba(35, 40, 47, 0.2)
+  );
   height: 13px;
   height: 13px;
   height: var(--plyr-range-thumb-height, 13px);
@@ -799,43 +865,59 @@ a.plyr__control:before {
   width: var(--plyr-range-thumb-height, 13px);
 }
 
-.plyr--full-ui input[type='range']::-ms-tooltip {
+.plyr--full-ui input[type="range"]::-ms-tooltip {
   display: none;
 }
 
-.plyr--full-ui input[type='range']::-moz-focus-outer {
+.plyr--full-ui input[type="range"]::-moz-focus-outer {
   border: 0;
 }
 
-.plyr--full-ui input[type='range']:focus {
+.plyr--full-ui input[type="range"]:focus {
   outline: 0;
 }
 
-.plyr--full-ui input[type='range'].plyr__tab-focus::-webkit-slider-runnable-track {
+.plyr--full-ui
+  input[type="range"].plyr__tab-focus::-webkit-slider-runnable-track {
   outline: 3px dotted #00b3ff;
   outline: #00b3ff dotted 3px;
-  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, var(--plyr-color-main, #00b3ff))) dotted 3px;
+  outline: var(
+      --plyr-tab-focus-color,
+      var(--plyr-color-main, var(--plyr-color-main, #00b3ff))
+    )
+    dotted 3px;
   outline-offset: 2px;
 }
 
-.plyr--full-ui input[type='range'].plyr__tab-focus::-moz-range-track {
+.plyr--full-ui input[type="range"].plyr__tab-focus::-moz-range-track {
   outline: 3px dotted #00b3ff;
   outline: #00b3ff dotted 3px;
-  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, var(--plyr-color-main, #00b3ff))) dotted 3px;
+  outline: var(
+      --plyr-tab-focus-color,
+      var(--plyr-color-main, var(--plyr-color-main, #00b3ff))
+    )
+    dotted 3px;
   outline-offset: 2px;
 }
 
-.plyr--full-ui input[type='range'].plyr__tab-focus::-ms-track {
+.plyr--full-ui input[type="range"].plyr__tab-focus::-ms-track {
   outline: 3px dotted #00b3ff;
   outline: #00b3ff dotted 3px;
-  outline: var(--plyr-tab-focus-color, var(--plyr-color-main, var(--plyr-color-main, #00b3ff))) dotted 3px;
+  outline: var(
+      --plyr-tab-focus-color,
+      var(--plyr-color-main, var(--plyr-color-main, #00b3ff))
+    )
+    dotted 3px;
   outline-offset: 2px;
 }
 
 .plyr__poster {
   background-color: #000;
   background-color: #000;
-  background-color: var(--plyr-video-background, var(--plyr-video-background, #000));
+  background-color: var(
+    --plyr-video-background,
+    var(--plyr-video-background, #000)
+  );
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -854,7 +936,8 @@ a.plyr__control:before {
   opacity: 1;
 }
 
-.plyr--youtube.plyr--paused.plyr__poster-enabled:not(.plyr--stopped) .plyr__poster {
+.plyr--youtube.plyr--paused.plyr__poster-enabled:not(.plyr--stopped)
+  .plyr__poster {
   display: none;
 }
 
@@ -865,7 +948,7 @@ a.plyr__control:before {
 }
 
 .plyr__time + .plyr__time:before {
-  content: '⁄';
+  content: "⁄";
   margin-right: 10px;
   margin-right: 10px;
   margin-right: var(--plyr-control-spacing, 10px);
@@ -901,7 +984,8 @@ a.plyr__control:before {
   opacity: 0;
   padding: 5px 7.5px;
   padding: calc(10px / 2) calc(10px / 2 * 1.5);
-  padding: calc(var(--plyr-control-spacing, 10px) / 2) calc(var(--plyr-control-spacing, 10px) / 2 * 1.5);
+  padding: calc(var(--plyr-control-spacing, 10px) / 2)
+    calc(var(--plyr-control-spacing, 10px) / 2 * 1.5);
   pointer-events: none;
   position: absolute;
   -webkit-transform: translate(-50%, 10px) scale(0.8);
@@ -911,7 +995,8 @@ a.plyr__control:before {
   -webkit-transition: opacity 0.2s ease 0.1s, -webkit-transform 0.2s ease 0.1s;
   transition: opacity 0.2s ease 0.1s, -webkit-transform 0.2s ease 0.1s;
   transition: transform 0.2s ease 0.1s, opacity 0.2s ease 0.1s;
-  transition: transform 0.2s ease 0.1s, opacity 0.2s ease 0.1s, -webkit-transform 0.2s ease 0.1s;
+  transition: transform 0.2s ease 0.1s, opacity 0.2s ease 0.1s,
+    -webkit-transform 0.2s ease 0.1s;
   white-space: nowrap;
   z-index: 2;
 }
@@ -925,11 +1010,12 @@ a.plyr__control:before {
   border-right: var(--plyr-tooltip-arrow-size, 4px) solid transparent;
   border-top: 4px solid hsla(0, 0%, 100%, 0.9);
   border-top: 4px solid hsla(0, 0%, 100%, 0.9);
-  border-top: var(--plyr-tooltip-arrow-size, 4px) solid var(--plyr-tooltip-background, hsla(0, 0%, 100%, 0.9));
+  border-top: var(--plyr-tooltip-arrow-size, 4px) solid
+    var(--plyr-tooltip-background, hsla(0, 0%, 100%, 0.9));
   bottom: -4px;
   bottom: calc(4px * -1);
   bottom: calc(var(--plyr-tooltip-arrow-size, 4px) * -1);
-  content: '';
+  content: "";
   height: 0;
   left: 50%;
   position: absolute;
@@ -960,11 +1046,17 @@ a.plyr__control:before {
   transform-origin: 0 100%;
 }
 
-.plyr__controls > .plyr__control:first-child + .plyr__control .plyr__tooltip:before,
+.plyr__controls
+  > .plyr__control:first-child
+  + .plyr__control
+  .plyr__tooltip:before,
 .plyr__controls > .plyr__control:first-child .plyr__tooltip:before {
   left: 16px;
   left: calc(18px / 2 + 10px * 0.7);
-  left: calc(var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) * 0.7);
+  left: calc(
+    var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) *
+      0.7
+  );
 }
 
 .plyr__controls > .plyr__control:last-child .plyr__tooltip {
@@ -980,14 +1072,26 @@ a.plyr__control:before {
   left: auto;
   right: 16px;
   right: calc(18px / 2 + 10px * 0.7);
-  right: calc(var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) * 0.7);
+  right: calc(
+    var(--plyr-control-icon-size, 18px) / 2 + var(--plyr-control-spacing, 10px) *
+      0.7
+  );
   -webkit-transform: translateX(50%);
   transform: translateX(50%);
 }
 
-.plyr__controls > .plyr__control:first-child + .plyr__control.plyr__tab-focus .plyr__tooltip,
-.plyr__controls > .plyr__control:first-child + .plyr__control .plyr__tooltip--visible,
-.plyr__controls > .plyr__control:first-child + .plyr__control:hover .plyr__tooltip,
+.plyr__controls
+  > .plyr__control:first-child
+  + .plyr__control.plyr__tab-focus
+  .plyr__tooltip,
+.plyr__controls
+  > .plyr__control:first-child
+  + .plyr__control
+  .plyr__tooltip--visible,
+.plyr__controls
+  > .plyr__control:first-child
+  + .plyr__control:hover
+  .plyr__tooltip,
 .plyr__controls > .plyr__control:first-child.plyr__tab-focus .plyr__tooltip,
 .plyr__controls > .plyr__control:first-child .plyr__tooltip--visible,
 .plyr__controls > .plyr__control:first-child:hover .plyr__tooltip,
@@ -1009,7 +1113,7 @@ a.plyr__control:before {
 }
 
 .plyr__progress__buffer,
-.plyr__progress input[type='range'] {
+.plyr__progress input[type="range"] {
   margin-left: -6.5px;
   margin-left: calc(13px * -0.5);
   margin-left: calc(var(--plyr-range-thumb-height, 13px) * -0.5);
@@ -1021,7 +1125,7 @@ a.plyr__control:before {
   width: calc(100% + var(--plyr-range-thumb-height, 13px));
 }
 
-.plyr__progress input[type='range'] {
+.plyr__progress input[type="range"] {
   position: relative;
   z-index: 2;
 }
@@ -1083,44 +1187,60 @@ a.plyr__control:before {
 .plyr--loading .plyr__progress__buffer {
   -webkit-animation: plyr-progress 1s linear infinite;
   animation: plyr-progress 1s linear infinite;
-  background-image: linear-gradient(-45deg, rgba(35, 40, 47, 0.6) 25%, transparent 0, transparent 50%, rgba(35, 40, 47, 0.6) 0, rgba(35, 40, 47, 0.6) 75%, transparent 0, transparent);
   background-image: linear-gradient(
-        -45deg,
-        rgba(35, 40, 47, 0.6) 25%,
-        transparent 25%,
-        transparent 50%,
-        rgba(35, 40, 47, 0.6) 50%,
-        rgba(35, 40, 47, 0.6) 75%,
-        transparent 75%,
-        transparent
-    );
+    -45deg,
+    rgba(35, 40, 47, 0.6) 25%,
+    transparent 0,
+    transparent 50%,
+    rgba(35, 40, 47, 0.6) 0,
+    rgba(35, 40, 47, 0.6) 75%,
+    transparent 0,
+    transparent
+  );
   background-image: linear-gradient(
-        -45deg,
-        var(--plyr-progress-loading-background, rgba(35, 40, 47, 0.6)) 25%,
-        transparent 25%,
-        transparent 50%,
-        var(--plyr-progress-loading-background, rgba(35, 40, 47, 0.6)) 50%,
-        var(--plyr-progress-loading-background, rgba(35, 40, 47, 0.6)) 75%,
-        transparent 75%,
-        transparent
-    );
+    -45deg,
+    rgba(35, 40, 47, 0.6) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(35, 40, 47, 0.6) 50%,
+    rgba(35, 40, 47, 0.6) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-image: linear-gradient(
+    -45deg,
+    var(--plyr-progress-loading-background, rgba(35, 40, 47, 0.6)) 25%,
+    transparent 25%,
+    transparent 50%,
+    var(--plyr-progress-loading-background, rgba(35, 40, 47, 0.6)) 50%,
+    var(--plyr-progress-loading-background, rgba(35, 40, 47, 0.6)) 75%,
+    transparent 75%,
+    transparent
+  );
   background-repeat: repeat-x;
   background-size: 25px 25px;
   background-size: 25px 25px;
-  background-size: var(--plyr-progress-loading-size, 25px) var(--plyr-progress-loading-size, 25px);
+  background-size: var(--plyr-progress-loading-size, 25px)
+    var(--plyr-progress-loading-size, 25px);
   color: transparent;
 }
 
 .plyr--video.plyr--loading .plyr__progress__buffer {
   background-color: hsla(0, 0%, 100%, 0.25);
   background-color: hsla(0, 0%, 100%, 0.25);
-  background-color: var(--plyr-video-progress-buffered-background, hsla(0, 0%, 100%, 0.25));
+  background-color: var(
+    --plyr-video-progress-buffered-background,
+    hsla(0, 0%, 100%, 0.25)
+  );
 }
 
 .plyr--audio.plyr--loading .plyr__progress__buffer {
   background-color: rgba(193, 200, 209, 0.6);
   background-color: rgba(193, 200, 209, 0.6);
-  background-color: var(--plyr-audio-progress-buffered-background, rgba(193, 200, 209, 0.6));
+  background-color: var(
+    --plyr-audio-progress-buffered-background,
+    rgba(193, 200, 209, 0.6)
+  );
 }
 
 .plyr__volume {
@@ -1136,7 +1256,7 @@ a.plyr__control:before {
   width: 20%;
 }
 
-.plyr__volume input[type='range'] {
+.plyr__volume input[type="range"] {
   margin-left: 5px;
   margin-left: calc(10px / 2);
   margin-left: calc(var(--plyr-control-spacing, 10px) / 2);
@@ -1171,66 +1291,106 @@ a.plyr__control:before {
 
 .plyr--audio .plyr__control.plyr__tab-focus,
 .plyr--audio .plyr__control:hover,
-.plyr--audio .plyr__control[aria-expanded='true'] {
+.plyr--audio .plyr__control[aria-expanded="true"] {
   background: #00b3ff;
   background: #00b3ff;
-  background: var(--plyr-audio-control-background-hover, var(--plyr-color-main, var(--plyr-color-main, #00b3ff)));
+  background: var(
+    --plyr-audio-control-background-hover,
+    var(--plyr-color-main, var(--plyr-color-main, #00b3ff))
+  );
   color: #fff;
   color: #fff;
   color: var(--plyr-audio-control-color-hover, #fff);
 }
 
-.plyr--full-ui.plyr--audio input[type='range']::-webkit-slider-runnable-track {
+.plyr--full-ui.plyr--audio input[type="range"]::-webkit-slider-runnable-track {
   background-color: rgba(193, 200, 209, 0.6);
   background-color: rgba(193, 200, 209, 0.6);
-  background-color: var(--plyr-audio-range-track-background, var(--plyr-audio-progress-buffered-background, rgba(193, 200, 209, 0.6)));
+  background-color: var(
+    --plyr-audio-range-track-background,
+    var(--plyr-audio-progress-buffered-background, rgba(193, 200, 209, 0.6))
+  );
 }
 
-.plyr--full-ui.plyr--audio input[type='range']::-moz-range-track {
+.plyr--full-ui.plyr--audio input[type="range"]::-moz-range-track {
   background-color: rgba(193, 200, 209, 0.6);
   background-color: rgba(193, 200, 209, 0.6);
-  background-color: var(--plyr-audio-range-track-background, var(--plyr-audio-progress-buffered-background, rgba(193, 200, 209, 0.6)));
+  background-color: var(
+    --plyr-audio-range-track-background,
+    var(--plyr-audio-progress-buffered-background, rgba(193, 200, 209, 0.6))
+  );
 }
 
-.plyr--full-ui.plyr--audio input[type='range']::-ms-track {
+.plyr--full-ui.plyr--audio input[type="range"]::-ms-track {
   background-color: rgba(193, 200, 209, 0.6);
   background-color: rgba(193, 200, 209, 0.6);
-  background-color: var(--plyr-audio-range-track-background, var(--plyr-audio-progress-buffered-background, rgba(193, 200, 209, 0.6)));
+  background-color: var(
+    --plyr-audio-range-track-background,
+    var(--plyr-audio-progress-buffered-background, rgba(193, 200, 209, 0.6))
+  );
 }
 
-.plyr--full-ui.plyr--audio input[type='range']:active::-webkit-slider-thumb {
-  -webkit-box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2), 0 0 0 3px rgba(35, 40, 47, 0.1);
-  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2), 0 0 0 3px rgba(35, 40, 47, 0.1);
-  -webkit-box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2),
-        0 0 0 3px rgba(35, 40, 47, 0.1);
+.plyr--full-ui.plyr--audio input[type="range"]:active::-webkit-slider-thumb {
+  -webkit-box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15)
+      rgba(35, 40, 47, 0.2),
+    0 0 0 3px rgba(35, 40, 47, 0.1);
+  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2),
+    0 0 0 3px rgba(35, 40, 47, 0.1);
+  -webkit-box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15),
+    0 0 0 1px rgba(35, 40, 47, 0.2), 0 0 0 3px rgba(35, 40, 47, 0.1);
   box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2),
-        0 0 0 3px rgba(35, 40, 47, 0.1);
-  -webkit-box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2)),
-        0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, rgba(35, 40, 47, 0.1));
-  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2)),
-        0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, rgba(35, 40, 47, 0.1));
+    0 0 0 3px rgba(35, 40, 47, 0.1);
+  -webkit-box-shadow: var(
+      --plyr-range-thumb-shadow,
+      0 1px 1px rgba(35, 40, 47, 0.15),
+      0 0 0 1px rgba(35, 40, 47, 0.2)
+    ),
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
+      var(--plyr-audio-range-thumb-active-shadow-color, rgba(35, 40, 47, 0.1));
+  box-shadow: var(
+      --plyr-range-thumb-shadow,
+      0 1px 1px rgba(35, 40, 47, 0.15),
+      0 0 0 1px rgba(35, 40, 47, 0.2)
+    ),
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
+      var(--plyr-audio-range-thumb-active-shadow-color, rgba(35, 40, 47, 0.1));
 }
 
-.plyr--full-ui.plyr--audio input[type='range']:active::-moz-range-thumb {
-  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2), 0 0 0 3px rgba(35, 40, 47, 0.1);
+.plyr--full-ui.plyr--audio input[type="range"]:active::-moz-range-thumb {
+  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2),
+    0 0 0 3px rgba(35, 40, 47, 0.1);
   box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2),
-        0 0 0 3px rgba(35, 40, 47, 0.1);
-  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2)),
-        0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, rgba(35, 40, 47, 0.1));
+    0 0 0 3px rgba(35, 40, 47, 0.1);
+  box-shadow: var(
+      --plyr-range-thumb-shadow,
+      0 1px 1px rgba(35, 40, 47, 0.15),
+      0 0 0 1px rgba(35, 40, 47, 0.2)
+    ),
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
+      var(--plyr-audio-range-thumb-active-shadow-color, rgba(35, 40, 47, 0.1));
 }
 
-.plyr--full-ui.plyr--audio input[type='range']:active::-ms-thumb {
-  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2), 0 0 0 3px rgba(35, 40, 47, 0.1);
+.plyr--full-ui.plyr--audio input[type="range"]:active::-ms-thumb {
+  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2),
+    0 0 0 3px rgba(35, 40, 47, 0.1);
   box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2),
-        0 0 0 3px rgba(35, 40, 47, 0.1);
-  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2)),
-        0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, rgba(35, 40, 47, 0.1));
+    0 0 0 3px rgba(35, 40, 47, 0.1);
+  box-shadow: var(
+      --plyr-range-thumb-shadow,
+      0 1px 1px rgba(35, 40, 47, 0.15),
+      0 0 0 1px rgba(35, 40, 47, 0.2)
+    ),
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
+      var(--plyr-audio-range-thumb-active-shadow-color, rgba(35, 40, 47, 0.1));
 }
 
 .plyr--audio .plyr__progress__buffer {
   color: rgba(193, 200, 209, 0.6);
   color: rgba(193, 200, 209, 0.6);
-  color: var(--plyr-audio-progress-buffered-background, rgba(193, 200, 209, 0.6));
+  color: var(
+    --plyr-audio-progress-buffered-background,
+    rgba(193, 200, 209, 0.6)
+  );
 }
 
 .plyr--video {
@@ -1262,7 +1422,7 @@ a.plyr__control:before {
 
 @supports not (aspect-ratio: 16/9) {
   .plyr__video-embed,
-    .plyr__video-wrapper--fixed-ratio {
+  .plyr__video-wrapper--fixed-ratio {
     height: 0;
     padding-bottom: 56.25%;
     position: relative;
@@ -1287,10 +1447,19 @@ a.plyr__control:before {
 }
 
 .plyr--video .plyr__controls {
-  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.75)));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(transparent),
+    to(rgba(0, 0, 0, 0.75))
+  );
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
-  background: var(--plyr-video-controls-background, linear-gradient(transparent, rgba(0, 0, 0, 0.75)));
+  background: var(
+    --plyr-video-controls-background,
+    linear-gradient(transparent, rgba(0, 0, 0, 0.75))
+  );
   border-bottom-left-radius: inherit;
   border-bottom-right-radius: inherit;
   bottom: 0;
@@ -1306,10 +1475,12 @@ a.plyr__control:before {
   padding-top: calc(var(--plyr-control-spacing, 10px) * 2);
   position: absolute;
   right: 0;
-  -webkit-transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  -webkit-transition: opacity 0.4s ease-in-out,
+    -webkit-transform 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
+    -webkit-transform 0.4s ease-in-out;
   z-index: 3;
 }
 
@@ -1322,10 +1493,13 @@ a.plyr__control:before {
 
 .plyr--video .plyr__control.plyr__tab-focus,
 .plyr--video .plyr__control:hover,
-.plyr--video .plyr__control[aria-expanded='true'] {
+.plyr--video .plyr__control[aria-expanded="true"] {
   background: #00b3ff;
   background: #00b3ff;
-  background: var(--plyr-video-control-background-hover, var(--plyr-color-main, var(--plyr-color-main, #00b3ff)));
+  background: var(
+    --plyr-video-control-background-hover,
+    var(--plyr-color-main, var(--plyr-color-main, #00b3ff))
+  );
   color: #fff;
   color: #fff;
   color: var(--plyr-video-control-color-hover, #fff);
@@ -1334,7 +1508,10 @@ a.plyr__control:before {
 .plyr__control--overlaid {
   background: #00b3ff;
   background: #00b3ff;
-  background: var(--plyr-video-control-background-hover, var(--plyr-color-main, var(--plyr-color-main, #00b3ff)));
+  background: var(
+    --plyr-video-control-background-hover,
+    var(--plyr-color-main, var(--plyr-color-main, #00b3ff))
+  );
   border: 0;
   border-radius: 100%;
   color: #fff;
@@ -1374,57 +1551,94 @@ a.plyr__control:before {
   display: block;
 }
 
-.plyr--full-ui.plyr--video input[type='range']::-webkit-slider-runnable-track {
+.plyr--full-ui.plyr--video input[type="range"]::-webkit-slider-runnable-track {
   background-color: hsla(0, 0%, 100%, 0.25);
   background-color: hsla(0, 0%, 100%, 0.25);
-  background-color: var(--plyr-video-range-track-background, var(--plyr-video-progress-buffered-background, hsla(0, 0%, 100%, 0.25)));
+  background-color: var(
+    --plyr-video-range-track-background,
+    var(--plyr-video-progress-buffered-background, hsla(0, 0%, 100%, 0.25))
+  );
 }
 
-.plyr--full-ui.plyr--video input[type='range']::-moz-range-track {
+.plyr--full-ui.plyr--video input[type="range"]::-moz-range-track {
   background-color: hsla(0, 0%, 100%, 0.25);
   background-color: hsla(0, 0%, 100%, 0.25);
-  background-color: var(--plyr-video-range-track-background, var(--plyr-video-progress-buffered-background, hsla(0, 0%, 100%, 0.25)));
+  background-color: var(
+    --plyr-video-range-track-background,
+    var(--plyr-video-progress-buffered-background, hsla(0, 0%, 100%, 0.25))
+  );
 }
 
-.plyr--full-ui.plyr--video input[type='range']::-ms-track {
+.plyr--full-ui.plyr--video input[type="range"]::-ms-track {
   background-color: hsla(0, 0%, 100%, 0.25);
   background-color: hsla(0, 0%, 100%, 0.25);
-  background-color: var(--plyr-video-range-track-background, var(--plyr-video-progress-buffered-background, hsla(0, 0%, 100%, 0.25)));
+  background-color: var(
+    --plyr-video-range-track-background,
+    var(--plyr-video-progress-buffered-background, hsla(0, 0%, 100%, 0.25))
+  );
 }
 
-.plyr--full-ui.plyr--video input[type='range']:active::-webkit-slider-thumb {
-  -webkit-box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2), 0 0 0 3px rgba(255, 255, 255, 0.5);
-  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2), 0 0 0 3px rgba(255, 255, 255, 0.5);
-  -webkit-box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2),
-        0 0 0 3px hsla(0, 0%, 100%, 0.5);
+.plyr--full-ui.plyr--video input[type="range"]:active::-webkit-slider-thumb {
+  -webkit-box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15)
+      rgba(35, 40, 47, 0.2),
+    0 0 0 3px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2),
+    0 0 0 3px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15),
+    0 0 0 1px rgba(35, 40, 47, 0.2), 0 0 0 3px hsla(0, 0%, 100%, 0.5);
   box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2),
-        0 0 0 3px hsla(0, 0%, 100%, 0.5);
-  -webkit-box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2)),
-        0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, hsla(0, 0%, 100%, 0.5));
-  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2)),
-        0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, hsla(0, 0%, 100%, 0.5));
+    0 0 0 3px hsla(0, 0%, 100%, 0.5);
+  -webkit-box-shadow: var(
+      --plyr-range-thumb-shadow,
+      0 1px 1px rgba(35, 40, 47, 0.15),
+      0 0 0 1px rgba(35, 40, 47, 0.2)
+    ),
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
+      var(--plyr-audio-range-thumb-active-shadow-color, hsla(0, 0%, 100%, 0.5));
+  box-shadow: var(
+      --plyr-range-thumb-shadow,
+      0 1px 1px rgba(35, 40, 47, 0.15),
+      0 0 0 1px rgba(35, 40, 47, 0.2)
+    ),
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
+      var(--plyr-audio-range-thumb-active-shadow-color, hsla(0, 0%, 100%, 0.5));
 }
 
-.plyr--full-ui.plyr--video input[type='range']:active::-moz-range-thumb {
-  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2), 0 0 0 3px rgba(255, 255, 255, 0.5);
+.plyr--full-ui.plyr--video input[type="range"]:active::-moz-range-thumb {
+  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2),
+    0 0 0 3px rgba(255, 255, 255, 0.5);
   box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2),
-        0 0 0 3px hsla(0, 0%, 100%, 0.5);
-  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2)),
-        0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, hsla(0, 0%, 100%, 0.5));
+    0 0 0 3px hsla(0, 0%, 100%, 0.5);
+  box-shadow: var(
+      --plyr-range-thumb-shadow,
+      0 1px 1px rgba(35, 40, 47, 0.15),
+      0 0 0 1px rgba(35, 40, 47, 0.2)
+    ),
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
+      var(--plyr-audio-range-thumb-active-shadow-color, hsla(0, 0%, 100%, 0.5));
 }
 
-.plyr--full-ui.plyr--video input[type='range']:active::-ms-thumb {
-  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2), 0 0 0 3px rgba(255, 255, 255, 0.5);
+.plyr--full-ui.plyr--video input[type="range"]:active::-ms-thumb {
+  box-shadow: 0 1px 1px 0 0 0 1px rgba(35, 40, 47, 0.15) rgba(35, 40, 47, 0.2),
+    0 0 0 3px rgba(255, 255, 255, 0.5);
   box-shadow: 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2),
-        0 0 0 3px hsla(0, 0%, 100%, 0.5);
-  box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2)),
-        0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px) var(--plyr-audio-range-thumb-active-shadow-color, hsla(0, 0%, 100%, 0.5));
+    0 0 0 3px hsla(0, 0%, 100%, 0.5);
+  box-shadow: var(
+      --plyr-range-thumb-shadow,
+      0 1px 1px rgba(35, 40, 47, 0.15),
+      0 0 0 1px rgba(35, 40, 47, 0.2)
+    ),
+    0 0 0 var(--plyr-range-thumb-active-shadow-width, 3px)
+      var(--plyr-audio-range-thumb-active-shadow-color, hsla(0, 0%, 100%, 0.5));
 }
 
 .plyr--video .plyr__progress__buffer {
   color: hsla(0, 0%, 100%, 0.25);
   color: hsla(0, 0%, 100%, 0.25);
-  color: var(--plyr-video-progress-buffered-background, hsla(0, 0%, 100%, 0.25));
+  color: var(
+    --plyr-video-progress-buffered-background,
+    hsla(0, 0%, 100%, 0.25)
+  );
 }
 
 .plyr:-webkit-full-screen {
@@ -1614,7 +1828,8 @@ a.plyr__control:before {
   -webkit-transition: opacity 0.2s ease 0.1s, -webkit-transform 0.2s ease 0.1s;
   transition: opacity 0.2s ease 0.1s, -webkit-transform 0.2s ease 0.1s;
   transition: transform 0.2s ease 0.1s, opacity 0.2s ease 0.1s;
-  transition: transform 0.2s ease 0.1s, opacity 0.2s ease 0.1s, -webkit-transform 0.2s ease 0.1s;
+  transition: transform 0.2s ease 0.1s, opacity 0.2s ease 0.1s,
+    -webkit-transform 0.2s ease 0.1s;
   z-index: 2;
 }
 
@@ -1633,11 +1848,12 @@ a.plyr__control:before {
   border-right: var(--plyr-tooltip-arrow-size, 4px) solid transparent;
   border-top: 4px solid hsla(0, 0%, 100%, 0.9);
   border-top: 4px solid hsla(0, 0%, 100%, 0.9);
-  border-top: var(--plyr-tooltip-arrow-size, 4px) solid var(--plyr-tooltip-background, hsla(0, 0%, 100%, 0.9));
+  border-top: var(--plyr-tooltip-arrow-size, 4px) solid
+    var(--plyr-tooltip-background, hsla(0, 0%, 100%, 0.9));
   bottom: -4px;
   bottom: calc(4px * -1);
   bottom: calc(var(--plyr-tooltip-arrow-size, 4px) * -1);
-  content: '';
+  content: "";
   height: 0;
   left: 50%;
   position: absolute;
