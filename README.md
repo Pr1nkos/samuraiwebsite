@@ -1,6 +1,6 @@
 # samuraiwebsite
 
-Одностраничный лендинг в стиле «ретро» на Bootstrap 5 (шаблон на базе BootstrapMade «Arsha»): шапка с видеофоном, секция истории, выпадающее меню, форма контактов.
+Одностраничный лендинг на Bootstrap 5: титульный экран с видеофоном, секция «Story», выпадающее меню и футер.
 
 ## Запуск
 
@@ -15,4 +15,4 @@ npx serve .
 - `index.html` — страница
 - `assets/css`, `assets/js` — стили и скрипты
 - `assets/img`, `assets/vd` — изображения и видео
-- `assets/vendor` — сторонние библиотеки (Bootstrap, Bootstrap Icons, Boxicons и др.)
+- `assets/vendor` — сторонние библиотеки (Bootstrap, Bootstrap Icons, Boxicons, AOS, GLightbox)
