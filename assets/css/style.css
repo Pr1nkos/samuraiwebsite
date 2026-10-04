@@ -675,7 +675,7 @@ h6 {
 # main Us
 --------------------------------------------------------------*/
 .main {
-  background-image: url(/mainBG.png);
+  background-image: url(../img/mainBG.png);
   background-size: cover;
 }
 .main .content h3 {
